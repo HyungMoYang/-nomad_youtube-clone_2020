@@ -1,6 +1,9 @@
+// for express
 import express from "express";
+// for function controller
 import { join, login, logout } from "../controller/userController";
 import { home, search } from "../controller/videoController";
+// to get router from external routers file
 import routes from "../routes";
 
 const globalRouter = express.Router();

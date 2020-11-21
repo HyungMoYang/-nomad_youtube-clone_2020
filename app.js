@@ -10,7 +10,7 @@ import videoRouter from "./routers/videoRouter";
 import routes from "./routes";
 const app = express();
 
-// app.use(betweenHome); // 전역으로 미들웨어 사용 - 순서가 중요하다.
+app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
