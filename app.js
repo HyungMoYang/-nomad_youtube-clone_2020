@@ -8,14 +8,17 @@ import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import videoRouter from "./routers/videoRouter";
 import routes from "./routes";
+import { localsMiddleware } from "./middlewares";
 const app = express();
 
+app.use(helmet());
 app.set("view engine", "pug");
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(helmet());
 app.use(morgan("dev"));
+
+app.use(localsMiddleware);
 
 app.use(routes.home, globalRouter);
 // 누군가 /user route를 사용하면 import한 userRouter 모듈을 사용한다. 
