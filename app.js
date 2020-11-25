@@ -21,8 +21,7 @@ app.use(morgan("dev"));
 app.use(localsMiddleware);
 
 app.use(routes.home, globalRouter);
-// 누군가 /user route를 사용하면 import한 userRouter 모듈을 사용한다. 
-app.use(routes.users, userRouter); // get이 아닌 use를 사용하는 이유. 
+app.use(routes.users, userRouter);
 app.use(routes.videos, videoRouter);
 
 export default app;
