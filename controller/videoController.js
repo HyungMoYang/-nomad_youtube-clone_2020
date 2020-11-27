@@ -1,11 +1,17 @@
-export const home = (req, res) => res.render("home", { pageTitle: "Home" });
+import { videos } from "../db"
+
+export const home = (req, res) => {
+    res.render("home", { pageTitle: "Home", videos: videos });
+};
 
 export const search = (req, res) => {
     // const searchingBy = req.query.term; // ES6 이전의 코딩 방식 
     // is the new way
-    const { query: { term: searchingBy } } = req;
+    const {
+        query: { term: searchingBy } // ES6문법 query로 전달된 객체에서 term을 가져옴.
+    } = req;
 
-    res.render("search", { pageTitle: "Search", searchingBy: searchingBy })
+    res.render("search", { pageTitle: "Search", searchingBy: searchingBy, videos: videos })
 };
 
 export const upload = (req, res) => res.render("upload", { pageTitle: "Upload" });
