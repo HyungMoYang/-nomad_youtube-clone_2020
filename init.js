@@ -2,6 +2,7 @@ import "./db";
 import app from "./app" // export한 app 모듈을 init으로 import
 import dotenv from "dotenv";
 import "./models/Video";
+import "./models/Comment";
 
 dotenv.config();
 
