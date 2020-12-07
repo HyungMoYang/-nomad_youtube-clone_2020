@@ -1,7 +1,13 @@
 // for express
 import express from "express";
 // for function controller
-import { getJoin, getLogin, login, logout, postJoin, postLogin } from "../controller/userController";
+import {
+  getJoin,
+  getLogin,
+  logout,
+  postJoin,
+  postLogin,
+} from "../controller/userController";
 import { home, search } from "../controller/videoController";
 // to get router from external routers file
 import routes from "../routes";
